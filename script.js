@@ -241,7 +241,7 @@ function sendChat() {
       setTimeout(() => {
         const link = document.createElement('div');
         link.className = 'msg bot';
-        link.innerHTML = '👉 <a href="https://m.me/61586977724505" target="_blank" rel="noopener" style="color:#c0748a; font-weight:500;">Chat with us on Messenger</a> — we\'ll reply ASAP!';
+        link.innerHTML = '👉 <a href="https://www.messenger.com/t/61586977724505" target="_blank" rel="noopener" style="color:#c0748a; font-weight:500;">Chat with us on Messenger</a> — we\'ll reply ASAP!';
         chatMessages.appendChild(link);
         chatMessages.scrollTop = chatMessages.scrollHeight;
       }, 700);
