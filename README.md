@@ -42,12 +42,11 @@ glamorphosis-studio/
 
 ## Customize Before Launching
 
-### 1. Update contact details (index.html)
-Search and replace these placeholders:
-- `@glamorphosis.ph` → your actual Facebook page handle
-- `+63 9XX XXX XXXX` → your real contact number
-- `hello@glamorphosis.ph` → your real email
-- `[Your Studio Address Here]` → your actual address
+### Contact details already added
+- Email: `dabsgonzales@yahoo.com`
+- Contact number: `+63 935 887 1346`
+- Facebook Page: `facebook.com/people/Glamorphosis-Studio/61586977724505/`
+- Instagram: `instagram.com/glamorphosis_makeupby_dabica`
 
 ### 2. Update pricing (index.html + script.js)
 Edit the prices in both files to match your actual rates.
@@ -139,7 +138,7 @@ async function getAIReply(userMessage) {
         Hair Styling (from ₱800), Hair Treatments (from ₱1,200),
         Photoshoot Makeup (from ₱2,000), Home Service (+ travel fee).
         Hours: Mon-Fri 8AM-7PM, Sat 7AM-8PM, Sun by appointment.
-        If unsure, direct to Messenger: @glamorphosis.ph
+        If unsure, direct to the Glamorphosis Studio Facebook page or Messenger.
         Keep replies short, friendly, and helpful.`,
       messages: [{ role: 'user', content: userMessage }]
     })

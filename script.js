@@ -165,7 +165,7 @@ const KB = [
   },
   {
     keys: ['contact', 'message', 'messenger', 'whatsapp', 'instagram', 'email', 'reach'],
-    reply: 'You can reach us on:\n💬 Facebook Messenger: Glamorphosis Studio (Facebook)\n📞 Phone/Text: +63 9XX XXX XXXX\n📷 Instagram: Glamorphosis Studio (Facebook)\n✉️ Email: helloGlamorphosis Studio (Facebook)\n\nWe\'re usually online during studio hours (Mon–Fri 8AM–7PM, Sat 7AM–8PM).'
+    reply: 'You can reach us on:\n💬 Facebook Messenger: Glamorphosis Studio\n📞 Phone/Text: +63 935 887 1346\n🌐 Facebook Page: facebook.com/people/Glamorphosis-Studio/61586977724505/\n📷 Instagram: @glamorphosis_makeupby_dabica\n✉️ Email: dabsgonzales@yahoo.com\n\nWe\'re usually online during studio hours (Mon–Fri 8AM–7PM, Sat 7AM–8PM).'
   },
   {
     keys: ['hours', 'open', 'schedule', 'time', 'bukas', 'close'],
