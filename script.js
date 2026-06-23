@@ -140,10 +140,6 @@ const KB = [
     reply: 'Hair Styling starts at ₱800. We do blowouts, updos, braids, beach waves, and more — styled to suit your vibe and event. ✂️'
   },
   {
-    keys: ['treatment', 'keratin', 'rebond', 'rebonding', 'conditioning', 'scalp'],
-    reply: 'Hair Treatments start at ₱1,200. We offer keratin, rebonding, deep conditioning, and scalp treatments for smooth, healthy hair that lasts! 💧'
-  },
-  {
     keys: ['photoshoot', 'shoot', 'photo', 'editorial', 'commercial'],
     reply: 'Photoshoot Makeup starts at ₱2,000. It\'s HD-ready and camera-proof — designed to look flawless under studio lighting with lens-proof coverage. 📸'
   },
@@ -157,7 +153,7 @@ const KB = [
   },
   {
     keys: ['price', 'cost', 'how much', 'magkano', 'rate', 'package', 'pricing'],
-    reply: 'Here\'s a quick pricing overview:\n💍 Bridal Hair & Makeup — from ₱3,500\n✨ Event Makeup — from ₱1,500\n✂️ Hair Styling — from ₱800\n💧 Hair Treatments — from ₱1,200\n📸 Photoshoot Makeup — from ₱2,000\n🏠 Home Service — + travel fee\n\nWant to book a specific service?'
+    reply: 'Here\'s a quick pricing overview:\n💍 Bridal Hair & Makeup — from ₱3,500\n✨ Event Makeup — from ₱1,500\n✂️ Hair Styling — from ₱800\n📸 Photoshoot Makeup — from ₱2,000\n🏠 Home Service — + travel fee\n\nWant to book a specific service?'
   },
   {
     keys: ['available', 'availability', 'july', 'august', 'september', 'october', 'november', 'december', 'january', 'february', 'date', 'slot'],

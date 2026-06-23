@@ -135,7 +135,7 @@ async function getAIReply(userMessage) {
       max_tokens: 300,
       system: `You are the AI assistant for Glamorphosis Studio, a beauty salon.
         Services: Bridal Hair & Makeup (from ₱3,500), Event Makeup (from ₱1,500),
-        Hair Styling (from ₱800), Hair Treatments (from ₱1,200),
+        Hair Styling (from ₱800),
         Photoshoot Makeup (from ₱2,000), Home Service (+ travel fee).
         Hours: Mon-Fri 8AM-7PM, Sat 7AM-8PM, Sun by appointment.
         If unsure, direct to the Glamorphosis Studio Facebook page or Messenger.
