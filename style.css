@@ -519,6 +519,14 @@ ul { list-style: none; }
   justify-content: center;
   font-size: 42px;
 }
+img.port-img {
+  width: 100%;
+  height: 300px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  font-size: 0;
+}
 .port-info { padding: 14px 16px; }
 .port-info h4 { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
 .port-info p { font-size: 12px; color: var(--text-muted); }
@@ -759,20 +767,42 @@ ul { list-style: none; }
   right: 24px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
   background: var(--rose);
   color: var(--white);
-  border: none;
-  padding: 12px 20px;
-  border-radius: var(--radius-pill);
+  border: 3px solid var(--white);
+  padding: 0;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
   font-size: 13px;
   font-weight: 500;
   box-shadow: 0 4px 20px rgba(192,116,138,0.4);
-  transition: background 0.2s, transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   z-index: 900;
+  overflow: visible;
 }
-.chat-toggle-btn:hover { background: var(--rose-deep); transform: translateY(-2px); }
+.chat-toggle-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(192,116,138,0.5); }
 .chat-toggle-icon { font-size: 14px; }
+.chat-toggle-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.chat-toggle-label {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  background: var(--rose);
+  color: var(--white);
+  border-radius: var(--radius-pill);
+  padding: 4px 9px;
+  font-size: 11px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
 
 .chat-widget {
   position: fixed;
@@ -810,12 +840,9 @@ ul { list-style: none; }
 .chat-avatar {
   width: 32px; height: 32px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: var(--white);
+  object-fit: cover;
+  object-position: center 38%;
+  border: 2px solid rgba(255,255,255,0.8);
   flex-shrink: 0;
 }
 .chat-header h4 { font-size: 14px; font-weight: 500; color: var(--white); }
