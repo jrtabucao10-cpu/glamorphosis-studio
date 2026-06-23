@@ -193,21 +193,28 @@ ul { list-style: none; }
 
 /* ── HERO ─────────────────────────────────── */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   align-items: center;
-  min-height: 520px;
-  padding: 64px 48px 56px;
-  background: linear-gradient(140deg, var(--rose-soft) 0%, #f5edf8 100%);
+  min-height: calc(100vh - var(--nav-h));
+  padding: 86px 48px 76px;
+  background:
+    linear-gradient(90deg, rgba(42,26,34,0.82) 0%, rgba(42,26,34,0.58) 38%, rgba(42,26,34,0.18) 72%, rgba(42,26,34,0.28) 100%),
+    url("photos/glamorphosis-header.jpg") center 58% / cover no-repeat;
   position: relative;
   overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
 }
 
 .hero-eyebrow {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: #f6c3d1;
   font-weight: 500;
   margin-bottom: 16px;
 }
@@ -217,17 +224,17 @@ ul { list-style: none; }
   font-size: clamp(40px, 6vw, 64px);
   font-weight: 300;
   line-height: 1.1;
-  color: #2a1a22;
+  color: var(--white);
   margin-bottom: 16px;
 }
 .hero-title em {
-  color: var(--rose);
+  color: #f6c3d1;
   font-style: italic;
 }
 
 .hero-tagline {
   font-size: 15px;
-  color: var(--mauve);
+  color: rgba(255,255,255,0.86);
   line-height: 1.65;
   margin-bottom: 32px;
 }
@@ -239,6 +246,14 @@ ul { list-style: none; }
   margin-bottom: 32px;
 }
 
+.hero .btn-ghost {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.72);
+}
+.hero .btn-ghost:hover {
+  background: rgba(255,255,255,0.14);
+}
+
 .hero-badges {
   display: flex;
   gap: 10px;
@@ -247,9 +262,9 @@ ul { list-style: none; }
 
 .badge {
   font-size: 11px;
-  color: var(--rose-deep);
-  background: rgba(192,116,138,0.08);
-  border: 1px solid var(--border);
+  color: var(--white);
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.28);
   padding: 5px 14px;
   border-radius: var(--radius-pill);
   font-weight: 400;
@@ -907,13 +922,14 @@ ul { list-style: none; }
   .nav-book-btn { display: none; }
 
   .hero {
-    grid-template-columns: 1fr;
-    padding: 40px 24px 48px;
+    padding: 82px 24px 72px;
     text-align: center;
-    min-height: auto;
+    min-height: calc(100vh - var(--nav-h));
+    justify-content: center;
+    background:
+      linear-gradient(180deg, rgba(42,26,34,0.78) 0%, rgba(42,26,34,0.58) 48%, rgba(42,26,34,0.78) 100%),
+      url("photos/glamorphosis-header.jpg") center 58% / cover no-repeat;
   }
-  .hero-visual { display: flex; min-height: auto; padding-left: 0; margin-top: 28px; }
-  .hero-photo { width: min(360px, 100%); height: 430px; }
   .hero-cta { justify-content: center; }
   .hero-badges { justify-content: center; }
 
