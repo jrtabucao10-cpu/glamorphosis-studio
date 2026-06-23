@@ -506,8 +506,8 @@ ul { list-style: none; }
   position: absolute;
   top: 120px;
   left: 50%;
-  width: min(720px, 86vw);
-  height: min(430px, 48vw);
+  width: min(1080px, 96vw);
+  height: min(610px, 58vw);
   transform: translateX(-50%);
   object-fit: contain;
   object-position: center;
@@ -1035,7 +1035,7 @@ video.port-img {
 
   .services-grid { padding: 28px 20px 48px; grid-template-columns: 1fr; }
   .portfolio-filter { padding: 20px 20px 12px; }
-  .portfolio-bg-video { top: 150px; width: 92vw; height: 52vw; border-radius: 18px; }
+  .portfolio-bg-video { top: 140px; width: 98vw; height: 62vw; border-radius: 18px; }
   .portfolio-grid { padding: 12px 20px 32px; grid-template-columns: 1fr 1fr; }
   .testimonials { padding: 40px 20px 48px; }
 
