@@ -90,6 +90,23 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     this.classList.add('active');
 
     const filter = this.dataset.filter;
+    const portfolioBg = document.getElementById('portfolio-bg-video');
+    const bgVideos = {
+      all: 'videos/header-video.mp4',
+      bridal: 'videos/bridal.mp4',
+      event: 'videos/soft-glam.mp4',
+      hair: 'videos/header-video.mp4',
+      shoot: 'videos/debut-photoshoot.mp4'
+    };
+    if (portfolioBg && bgVideos[filter]) {
+      const nextSrc = bgVideos[filter];
+      const source = portfolioBg.querySelector('source');
+      if (source && !source.src.endsWith(nextSrc)) {
+        source.src = nextSrc;
+        portfolioBg.load();
+        portfolioBg.play().catch(() => {});
+      }
+    }
 
     document.querySelectorAll('.portfolio-card').forEach(card => {
       const matches = filter === 'all' || card.dataset.cat === filter;

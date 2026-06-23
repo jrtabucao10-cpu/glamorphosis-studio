@@ -75,7 +75,7 @@ ul { list-style: none; }
 
 .btn-ghost {
   display: inline-block;
-  background: transparent;
+  background: rgba(255,255,255,0.72);
   color: var(--rose);
   padding: 12px 28px;
   border-radius: var(--radius-pill);
@@ -217,8 +217,8 @@ ul { list-style: none; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: right center;
+  object-fit: cover;
+  object-position: center 22%;
   z-index: 0;
 }
 
@@ -357,7 +357,8 @@ ul { list-style: none; }
 /* ── Home Services ────────────────────────── */
 .home-services {
   padding: 64px 48px;
-  background: var(--white);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
 }
 .home-services > .section-eyebrow { text-align: center; }
 
@@ -494,11 +495,50 @@ ul { list-style: none; }
 .service-price { font-size: 14px; font-weight: 500; color: var(--rose); }
 
 /* ── Portfolio ────────────────────────────── */
+#portfolio {
+  position: relative;
+  overflow: hidden;
+  background: #1b1218;
+}
+
+.portfolio-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.34;
+  z-index: 0;
+}
+
+.portfolio-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(253,248,245,0.9) 0%, rgba(253,248,245,0.7) 34%, rgba(42,26,34,0.7) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#portfolio .page-hero,
+#portfolio .portfolio-filter,
+#portfolio .portfolio-grid,
+#portfolio .testimonials {
+  position: relative;
+  z-index: 2;
+}
+
+#portfolio .page-hero {
+  background: rgba(253,248,245,0.72);
+  backdrop-filter: blur(10px);
+}
+
 .portfolio-filter {
   display: flex;
   gap: 8px;
   padding: 24px 40px 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .filter-btn {
   font-size: 12px;
@@ -975,7 +1015,7 @@ video.port-img {
     justify-content: center;
   }
   .hero::before { background: linear-gradient(180deg, rgba(42,26,34,0.78) 0%, rgba(42,26,34,0.58) 48%, rgba(42,26,34,0.78) 100%); }
-  .hero-video { object-position: center; }
+  .hero-video { object-position: center 22%; }
   .hero-cta { justify-content: center; }
   .hero-badges { justify-content: center; }
 
