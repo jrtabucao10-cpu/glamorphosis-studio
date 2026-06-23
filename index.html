@@ -34,8 +34,8 @@
   <section id="home" class="page active">
 
     <div class="hero">
-      <video class="hero-video" autoplay="" muted="" loop="" playsinline="" aria-hidden="true">
-        <source src="videos/hero-header.mp4" type="video/mp4">
+      <video class="hero-video" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="auto" aria-hidden="true">
+        <source src="videos/hero-header.mp4?v=20260623-mobile" type="video/mp4">
       </video>
       <div class="hero-inner">
         <p class="hero-eyebrow">Hair &nbsp;·&nbsp; Makeup &nbsp;·&nbsp; Beauty</p>
@@ -470,6 +470,21 @@
     <span class="chat-toggle-label">Glam Help</span>
   </button>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var heroVideo = document.querySelector('.hero-video');
+      if (!heroVideo) return;
+      heroVideo.muted = true;
+      heroVideo.defaultMuted = true;
+      heroVideo.playsInline = true;
+      var playHero = function () {
+        var playPromise = heroVideo.play();
+        if (playPromise && playPromise.catch) playPromise.catch(function () {});
+      };
+      playHero();
+      window.addEventListener('touchstart', playHero, { once: true, passive: true });
+    });
+  </script>
   <script src="script.js"></script>
 
 
