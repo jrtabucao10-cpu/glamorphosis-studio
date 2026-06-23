@@ -1,261 +1,476 @@
-/* =============================================
-   GLAMORPHOSIS STUDIO — script.js
-   Handles: navigation, portfolio filter,
-   booking form, AI chat assistant
-   ============================================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Glamorphosis Studio — Professional Hair, Makeup & Beauty services. Bridal, events, photoshoots & home service." />
+  <title>Glamorphosis Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-/* ── Section Navigation ───────────────────── */
-function showSection(id) {
-  // Hide all pages
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  // Show target
-  const target = document.getElementById(id);
-  if (target) {
-    target.classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-  // Update nav link active state
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-  });
-  // Close mobile nav
-  document.getElementById('nav-links').classList.remove('open');
-  document.getElementById('nav-toggle').setAttribute('aria-expanded', 'false');
-}
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav" id="nav">
+    <a class="nav-logo" href="#home" onclick="showSection('home')">
+      <span class="logo-mark">✦</span>
+      <span class="logo-text">Glamorphosis <em>Studio</em></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="nav-links" role="navigation" aria-label="Main navigation">
+      <a href="#home"      onclick="showSection('home')"      class="nav-link active">Home</a>
+      <a href="#services"  onclick="showSection('services')"  class="nav-link">Services</a>
+      <a href="#portfolio" onclick="showSection('portfolio')" class="nav-link">Portfolio</a>
+      <a href="#contact"   onclick="showSection('contact')"   class="nav-link">Contact</a>
+    </nav>
+    <a href="#booking" onclick="showSection('booking')" class="nav-book-btn">Book Now</a>
+  </header>
 
-/* ── Mobile Nav Toggle ────────────────────── */
-document.getElementById('nav-toggle').addEventListener('click', function () {
-  const navLinks = document.getElementById('nav-links');
-  const open = navLinks.classList.toggle('open');
-  this.setAttribute('aria-expanded', open ? 'true' : 'false');
-});
+  <!-- ===================== HOME ===================== -->
+  <main>
+  <section id="home" class="page active">
 
-/* ── Nav scroll shadow ────────────────────── */
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('nav');
-  nav.style.boxShadow = window.scrollY > 10
-    ? '0 2px 12px rgba(42,26,34,0.08)'
-    : 'none';
-}, { passive: true });
+    <div class="hero">
+      <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="videos/soft-glam.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Hair &nbsp;·&nbsp; Makeup &nbsp;·&nbsp; Beauty</p>
+        <h1 class="hero-title">Where Beauty<br><em>Becomes Art</em></h1>
+        <p class="hero-tagline">Transforming beauty, elevating confidence —<br>one glam session at a time.</p>
+        <div class="hero-cta">
+          <a href="#booking" onclick="showSection('booking')" class="btn-primary">Book Your Glam Session</a>
+          <a href="#portfolio" onclick="showSection('portfolio')" class="btn-ghost">View Portfolio</a>
+        </div>
+        <div class="hero-badges">
+          <span class="badge">✦ Bridal Specialist</span>
+          <span class="badge">✦ Home Service Available</span>
+          <span class="badge">✦ 500+ Transformations</span>
+        </div>
+      </div>
+    </div>
 
-/* ── Set min date on booking form ─────────── */
-const dateInput = document.getElementById('b-date');
-if (dateInput) {
-  const today = new Date().toISOString().split('T')[0];
-  dateInput.setAttribute('min', today);
-}
+    <!-- Mini service teasers -->
+    <div class="home-services">
+      <p class="section-eyebrow">What We Offer</p>
+      <div class="teaser-grid">
+        <div class="teaser-card">
+          <div class="teaser-icon">💍</div>
+          <h3>Bridal</h3>
+          <p>Full transformation for your most important day — from trial to touch-up.</p>
+          <span class="teaser-price">From ₱3,500</span>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-icon">✨</div>
+          <h3>Event Makeup</h3>
+          <p>Debut, prom, gala — glam that photographs beautifully and lasts all night.</p>
+          <span class="teaser-price">From ₱1,500</span>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-icon">✂️</div>
+          <h3>Hair Styling</h3>
+          <p>Blowouts, updos, braids, and waves styled for every occasion.</p>
+          <span class="teaser-price">From ₱800</span>
+        </div>
+        <div class="teaser-card">
+          <div class="teaser-icon">🏠</div>
+          <h3>Home Service</h3>
+          <p>We travel to you — available for bridal, events, and photoshoots.</p>
+          <span class="teaser-price">+ Travel fee</span>
+        </div>
+      </div>
+      <div class="center-btn">
+        <a href="#services" onclick="showSection('services')" class="btn-outline">See All Services →</a>
+      </div>
+    </div>
 
-/* ── Booking Form ─────────────────────────── */
-document.getElementById('booking-form').addEventListener('submit', function (e) {
-  e.preventDefault();
+    <!-- Social proof strip -->
+    <div class="proof-strip">
+      <div class="proof-item"><strong>500+</strong><span>Happy Clients</span></div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item"><strong>8 yrs</strong><span>Experience</span></div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item"><strong>⭐ 5.0</strong><span>Average Rating</span></div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item"><strong>100%</strong><span>Satisfaction</span></div>
+    </div>
 
-  // Basic validation
-  const name    = document.getElementById('b-name').value.trim();
-  const phone   = document.getElementById('b-phone').value.trim();
-  const service = document.getElementById('b-service').value;
-  const date    = document.getElementById('b-date').value;
-  const time    = document.getElementById('b-time').value;
+  </section>
 
-  if (!name || !phone || !service || !date || !time) {
-    alert('Please fill in all required fields before submitting.');
-    return;
-  }
+  <!-- ===================== SERVICES ===================== -->
+  <section id="services" class="page">
+    <div class="page-hero">
+      <p class="section-eyebrow">What We Do</p>
+      <h2>Our Services</h2>
+      <p class="page-sub">Professional beauty services tailored for every occasion</p>
+    </div>
 
-  // Show success state
-  document.getElementById('booking-form').hidden = true;
-  const success = document.getElementById('booking-success');
-  success.hidden = false;
-  document.getElementById('success-name').textContent =
-    `✦ ${name} — ${service} on ${formatDate(date)} at ${time}`;
+    <div class="services-grid">
 
-  // In production: send to Supabase or your backend here
-  // Example:
-  // fetch('YOUR_SUPABASE_FUNCTION_URL', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ name, phone, service, date, time })
-  // });
-});
+      <div class="service-card">
+        <div class="service-icon-wrap" aria-hidden="true">💍</div>
+        <div class="service-body">
+          <h3>Bridal Hair & Makeup</h3>
+          <p>Complete bridal transformation. Includes trial session, airbrush foundation, full glam, lashes & touch-up kit. Entourage packages available.</p>
+          <ul class="service-includes">
+            <li>Trial session included</li>
+            <li>Airbrush & lashes</li>
+            <li>Touch-up kit</li>
+            <li>Entourage add-ons available</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price">From ₱3,500</span>
+            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
 
-function formatDate(iso) {
-  const d = new Date(iso + 'T00:00:00');
-  return d.toLocaleDateString('en-PH', { month: 'long', day: 'numeric', year: 'numeric' });
-}
+      <div class="service-card">
+        <div class="service-icon-wrap" aria-hidden="true">✨</div>
+        <div class="service-body">
+          <h3>Event Makeup</h3>
+          <p>Debut, prom, gala, pageant — full glam that lasts all night and photographs beautifully. Customized to your theme and style.</p>
+          <ul class="service-includes">
+            <li>Full face glam</li>
+            <li>HD-ready foundation</li>
+            <li>Lashes included</li>
+            <li>Setting spray finish</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price">From ₱1,500</span>
+            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
 
-/* ── Portfolio Filter ─────────────────────── */
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', function () {
-    // Update active button
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
+      <div class="service-card">
+        <div class="service-icon-wrap" aria-hidden="true">✂️</div>
+        <div class="service-body">
+          <h3>Hair Styling</h3>
+          <p>Blowout, updo, braids, beach waves, or sleek straight — styled for your event or everyday glam. Every texture welcome.</p>
+          <ul class="service-includes">
+            <li>Blowout & straightening</li>
+            <li>Updo & braids</li>
+            <li>Curls & waves</li>
+            <li>Hair accessories on request</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price">From ₱800</span>
+            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
 
-    const filter = this.dataset.filter;
-    const portfolioBg = document.getElementById('portfolio-bg-video');
-    const bgVideos = {
-      all: 'videos/header-video.mp4',
-      bridal: 'videos/bridal.mp4',
-      event: 'videos/soft-glam.mp4',
-      hair: 'videos/header-video.mp4',
-      shoot: 'videos/debut-photoshoot.mp4'
-    };
-    if (portfolioBg && bgVideos[filter]) {
-      const nextSrc = bgVideos[filter];
-      const source = portfolioBg.querySelector('source');
-      if (source && !source.src.endsWith(nextSrc)) {
-        source.src = nextSrc;
-        portfolioBg.load();
-        portfolioBg.play().catch(() => {});
-      }
-    }
+      <div class="service-card">
+        <div class="service-icon-wrap" aria-hidden="true">📸</div>
+        <div class="service-body">
+          <h3>Photoshoot Makeup</h3>
+          <p>HD-ready, lens-proof makeup for editorial, commercial, and personal shoots. Designed to look flawless under studio lighting.</p>
+          <ul class="service-includes">
+            <li>HD & airbrush finish</li>
+            <li>Studio lighting optimized</li>
+            <li>Multiple looks available</li>
+            <li>On-set touch-ups</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price">From ₱2,000</span>
+            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
 
-    document.querySelectorAll('.portfolio-card').forEach(card => {
-      const matches = filter === 'all' || card.dataset.cat === filter;
-      card.classList.toggle('hidden', !matches);
-    });
-  });
-});
+      <div class="service-card">
+        <div class="service-icon-wrap" aria-hidden="true">🏠</div>
+        <div class="service-body">
+          <h3>Home Service</h3>
+          <p>We come to you! Available for bridal, events, and photoshoots within the service area. Great for getting ready at your venue.</p>
+          <ul class="service-includes">
+            <li>Available for all services</li>
+            <li>Early morning slots available</li>
+            <li>Venue & hotel ready</li>
+            <li>Travel fee based on location</li>
+          </ul>
+          <div class="service-footer">
+            <span class="service-price">+ Travel fee</span>
+            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
 
-/* ── AI Chat Widget ───────────────────────── */
-const chatToggle  = document.getElementById('chat-toggle');
-const chatWidget  = document.getElementById('chat-widget');
-const chatClose   = document.getElementById('chat-close');
-const chatInput   = document.getElementById('chat-input');
-const chatSend    = document.getElementById('chat-send');
-const chatMessages = document.getElementById('chat-messages');
-const quickSuggestions = document.getElementById('quick-suggestions');
+    </div>
+  </section>
 
-chatToggle.addEventListener('click', () => {
-  const isOpen = chatWidget.classList.toggle('open');
-  chatToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  chatWidget.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-  if (isOpen) chatInput.focus();
-});
+  <!-- ===================== PORTFOLIO ===================== -->
+  <section id="portfolio" class="page">
+    <video class="portfolio-bg-video" id="portfolio-bg-video" autoplay muted loop playsinline aria-hidden="true">
+      <source src="videos/header-video.mp4" type="video/mp4" />
+    </video>
+    <div class="portfolio-bg-overlay" aria-hidden="true"></div>
+    <div class="page-hero">
+      <p class="section-eyebrow">Our Work</p>
+      <h2>Portfolio</h2>
+      <p class="page-sub">Real transformations. Real confidence.</p>
+    </div>
 
-chatClose.addEventListener('click', () => {
-  chatWidget.classList.remove('open');
-  chatToggle.setAttribute('aria-expanded', 'false');
-  chatWidget.setAttribute('aria-hidden', 'true');
-});
+    <div class="portfolio-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="bridal">Bridal</button>
+      <button class="filter-btn" data-filter="event">Event</button>
+      <button class="filter-btn" data-filter="hair">Hair</button>
+      <button class="filter-btn" data-filter="shoot">Photoshoot</button>
+    </div>
 
-chatSend.addEventListener('click', sendChat);
-chatInput.addEventListener('keydown', e => {
-  if (e.key === 'Enter') sendChat();
-});
+    <div class="portfolio-grid" id="portfolio-grid">
+      <div class="portfolio-card" data-cat="bridal"><div class="port-img" style="background:#fdf0f4;">💍</div><div class="port-info"><h4>Bridal Glam</h4><p>Traditional ceremony look</p></div></div>
+      <div class="portfolio-card" data-cat="bridal"><video class="port-img" controls preload="metadata"><source src="videos/bridal.mp4" type="video/mp4"></video><div class="port-info"><h4>Bridal</h4><p>Bridal glam video highlight</p></div></div>
+      <div class="portfolio-card" data-cat="event"><div class="port-img" style="background:#f5edf8;">🌙</div><div class="port-info"><h4>Evening Gala</h4><p>Smoky editorial look</p></div></div>
+      <div class="portfolio-card" data-cat="event"><video class="port-img" controls preload="metadata"><source src="videos/soft-glam.mp4" type="video/mp4"></video><div class="port-info"><h4>Soft Glam</h4><p>Soft glam video highlight</p></div></div>
+      <div class="portfolio-card" data-cat="event"><div class="port-img" style="background:#fdf4ee;">🌸</div><div class="port-info"><h4>Debut Makeup</h4><p>Soft floral theme</p></div></div>
+      <div class="portfolio-card" data-cat="event"><video class="port-img" controls preload="metadata"><source src="videos/birthday-glam.mp4" type="video/mp4"></video><div class="port-info"><h4>Birthday Glam</h4><p>Birthday glam video highlight</p></div></div>
+      <div class="portfolio-card" data-cat="event"><video class="port-img" controls preload="metadata"><source src="videos/debut-photoshoot.mp4" type="video/mp4"></video><div class="port-info"><h4>Debut Photoshoot</h4><p>Debut glam video highlight</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-01.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Editorial glam look</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-02.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Fashion portrait look</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-03.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Soft floral glam</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-04.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Beauty portrait</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-05.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Birthday shoot glam</p></div></div>
+      <div class="portfolio-card" data-cat="hair"><div class="port-img" style="background:#f0f8ef;">✨</div><div class="port-info"><h4>Hair Transformation</h4><p>Keratin smoothing</p></div></div>
+      <div class="portfolio-card" data-cat="event"><div class="port-img" style="background:#fdf5f0;">🎀</div><div class="port-info"><h4>Prom Night</h4><p>Glam updo + glitter liner</p></div></div>
+      <div class="portfolio-card" data-cat="bridal"><div class="port-img" style="background:#f9f0fd;">👑</div><div class="port-info"><h4>Modern Bride</h4><p>Dewy skin + bold lip</p></div></div>
+      <div class="portfolio-card" data-cat="hair"><div class="port-img" style="background:#fef9f0;">🌊</div><div class="port-info"><h4>Beach Waves</h4><p>Effortless styling</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-06.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Shadow portrait glam</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-07.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Editorial evening look</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-08.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Studio glam shoot</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-09.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Birthday portrait</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-10.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Clean studio beauty</p></div></div>
+      <div class="portfolio-card" data-cat="shoot"><img src="photos/photoshoot-11.jpg" alt="Photoshoot makeup by Glamorphosis Studio" class="port-img"><div class="port-info"><h4>Photoshoot Makeup</h4><p>Creative studio glam</p></div></div>
+    </div>
 
-/* Knowledge base for the AI assistant */
-const KB = [
-  {
-    keys: ['bridal', 'bride', 'wedding', 'kasal'],
-    reply: 'Our Bridal Hair & Makeup package starts at ₱3,500. It includes a trial session, airbrush foundation, full glam, lashes, and a touch-up kit. Entourage packages are also available! Would you like to book a slot? 💍'
-  },
-  {
-    keys: ['event', 'debut', 'prom', 'gala', 'pageant', 'party'],
-    reply: 'Event Makeup starts at ₱1,500 — perfect for debut, prom, gala, or any special occasion. Full glam that lasts all night and photographs beautifully! 🌟'
-  },
-  {
-    keys: ['hair styling', 'updo', 'blowout', 'waves', 'braid', 'hairstyle'],
-    reply: 'Hair Styling starts at ₱800. We do blowouts, updos, braids, beach waves, and more — styled to suit your vibe and event. ✂️'
-  },
-  {
-    keys: ['photoshoot', 'shoot', 'photo', 'editorial', 'commercial'],
-    reply: 'Photoshoot Makeup starts at ₱2,000. It\'s HD-ready and camera-proof — designed to look flawless under studio lighting with lens-proof coverage. 📸'
-  },
-  {
-    keys: ['home service', 'home', 'house', 'venue', 'travel', 'labas', 'pumunta'],
-    reply: 'Yes, we offer home service! We travel to you for bridal, events, and photoshoots. A travel fee applies based on your location. Just include your address in the booking notes. 🏠'
-  },
-  {
-    keys: ['book', 'appointment', 'reserve', 'schedule', 'how to book', 'mag-book'],
-    reply: 'Booking is easy! Just click the "Book Now" button in the menu, fill in your name, mobile number, service, and preferred date and time. We\'ll confirm within 24 hours via Messenger or WhatsApp. 📅'
-  },
-  {
-    keys: ['price', 'cost', 'how much', 'magkano', 'rate', 'package', 'pricing'],
-    reply: 'Here\'s a quick pricing overview:\n💍 Bridal Hair & Makeup — from ₱3,500\n✨ Event Makeup — from ₱1,500\n✂️ Hair Styling — from ₱800\n📸 Photoshoot Makeup — from ₱2,000\n🏠 Home Service — + travel fee\n\nWant to book a specific service?'
-  },
-  {
-    keys: ['available', 'availability', 'july', 'august', 'september', 'october', 'november', 'december', 'january', 'february', 'date', 'slot'],
-    reply: 'To check availability for a specific date, please use our booking form or message us directly! We\'ll confirm your preferred slot within 24 hours. 📅'
-  },
-  {
-    keys: ['contact', 'message', 'messenger', 'whatsapp', 'instagram', 'email', 'reach'],
-    reply: 'You can reach us on:\n💬 Facebook Messenger: Glamorphosis Studio\n📞 Phone/Text: +63 935 887 1346\n🌐 Facebook Page: facebook.com/people/Glamorphosis-Studio/61586977724505/\n📷 Instagram: @glamorphosis_makeupby_dabica\n✉️ Email: dabsgonzales@yahoo.com\n\nWe\'re usually online during studio hours (Mon–Fri 8AM–7PM, Sat 7AM–8PM).'
-  },
-  {
-    keys: ['hours', 'open', 'schedule', 'time', 'bukas', 'close'],
-    reply: 'Our studio hours are:\n🕗 Monday–Friday: 8:00 AM – 7:00 PM\n🕖 Saturday: 7:00 AM – 8:00 PM\n📅 Sunday: By appointment only\n\nHome service slots are available daily upon request!'
-  },
-  {
-    keys: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'kamusta'],
-    reply: 'Hello! Welcome to Glamorphosis Studio ✦ How can I help you today? You can ask me about our services, pricing, availability, or how to book an appointment!'
-  },
-  {
-    keys: ['thank', 'thanks', 'salamat'],
-    reply: 'You\'re so welcome! ✦ Is there anything else I can help you with? We\'d love to be part of your glam journey!'
-  }
-];
+    <!-- Testimonials -->
+    <div class="testimonials">
+      <p class="section-eyebrow">Client Love</p>
+      <h3>What they're saying</h3>
+      <div class="testimonials-grid">
+        <blockquote class="testimonial">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>"I cried when I saw myself in the mirror on my wedding day. The team at Glamorphosis made me feel like the most beautiful version of myself. Worth every peso."</p>
+          <footer><cite>Mariel S.</cite> — Bride</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>"Professional, on time, and incredibly talented. My debut look was exactly what I envisioned — my friends couldn't stop complimenting me all night!"</p>
+          <footer><cite>Trisha L.</cite> — Debut Celebrant</footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <p>"The home service is so convenient. They arrived early and made the whole morning stress-free. The makeup lasted through the entire reception. Highly recommend!"</p>
+          <footer><cite>Joy R.</cite> — Event Client</footer>
+        </blockquote>
+      </div>
+    </div>
 
-function getAIReply(userMsg) {
-  const msg = userMsg.toLowerCase();
-  for (const entry of KB) {
-    if (entry.keys.some(k => msg.includes(k))) {
-      return entry.reply;
-    }
-  }
-  return null;
-}
+  </section>
 
-function addMessage(text, type) {
-  const el = document.createElement('div');
-  el.className = 'msg ' + type;
-  // Support newlines
-  el.style.whiteSpace = 'pre-wrap';
-  el.textContent = text;
-  chatMessages.appendChild(el);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-  return el;
-}
+  <!-- ===================== BOOKING ===================== -->
+  <section id="booking" class="page">
+    <div class="page-hero">
+      <p class="section-eyebrow">Reserve Your Slot</p>
+      <h2>Book an Appointment</h2>
+      <p class="page-sub">Fill in your details and we'll confirm your slot within 24 hours</p>
+    </div>
 
-function sendChat() {
-  const val = chatInput.value.trim();
-  if (!val) return;
+    <div class="booking-wrap">
+      <form id="booking-form" class="booking-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="b-name">Full name</label>
+            <input type="text" id="b-name" name="name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="b-phone">Mobile number</label>
+            <input type="tel" id="b-phone" name="phone" placeholder="+63 935 887 1346" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="b-service">Service</label>
+          <select id="b-service" name="service" required>
+            <option value="">Select a service...</option>
+            <option value="Bridal Hair & Makeup">Bridal Hair & Makeup — From ₱3,500</option>
+            <option value="Event Makeup">Event Makeup — From ₱1,500</option>
+            <option value="Hair Styling">Hair Styling — From ₱800</option>
+            <option value="Photoshoot Makeup">Photoshoot Makeup — From ₱2,000</option>
+            <option value="Home Service">Home Service — + Travel fee</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="b-date">Preferred date</label>
+            <input type="date" id="b-date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="b-time">Preferred time</label>
+            <select id="b-time" name="time" required>
+              <option value="">Select a time...</option>
+              <option>7:00 AM</option>
+              <option>8:00 AM</option>
+              <option>9:00 AM</option>
+              <option>10:00 AM</option>
+              <option>11:00 AM</option>
+              <option>1:00 PM</option>
+              <option>2:00 PM</option>
+              <option>3:00 PM</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="b-notes">Notes <span class="optional">(optional)</span></label>
+          <textarea id="b-notes" name="notes" placeholder="E.g. theme, reference photo link, address for home service, entourage count..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Confirm Booking Request</button>
+        <p class="form-note">We'll confirm via Messenger or phone call within 24 hours.</p>
+      </form>
 
-  // Hide quick suggestions after first message
-  if (quickSuggestions) quickSuggestions.style.display = 'none';
+      <div id="booking-success" class="booking-success" hidden>
+        <div class="success-icon" aria-hidden="true">✦</div>
+        <h3>Booking request sent!</h3>
+        <p>Thank you! We'll confirm your appointment via <strong>Messenger or phone call</strong> within 24 hours.</p>
+        <p class="success-name" id="success-name"></p>
+        <div class="success-actions">
+          <a href="#home" onclick="showSection('home')" class="btn-primary">Back to Home</a>
+          <a href="https://m.me/61586977724505" target="_blank" rel="noopener" class="btn-ghost">Message Us Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  addMessage(val, 'user');
-  chatInput.value = '';
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="page">
+    <div class="page-hero">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h2>Contact Us</h2>
+      <p class="page-sub">Reach us on your preferred platform — we reply fast!</p>
+    </div>
 
-  // Typing indicator
-  const typing = addMessage('typing...', 'bot typing');
+    <div class="contact-channels">
+      <a href="https://m.me/61586977724505" target="_blank" rel="noopener" class="channel-card">
+        <span class="channel-icon" aria-hidden="true">💬</span>
+        <div>
+          <h4>Facebook Messenger</h4>
+          <p>Chat with us directly for quick replies</p>
+          <span class="channel-handle">Glamorphosis Studio (Facebook)</span>
+        </div>
+      </a>
+      <a href="tel:+639358871346" class="channel-card">
+        <span class="channel-icon" aria-hidden="true">📞</span>
+        <div>
+          <h4>Call or Text</h4>
+          <p>Call or text us directly</p>
+          <span class="channel-handle">+63 935 887 1346</span>
+        </div>
+      </a>
+      <a href="https://facebook.com/people/Glamorphosis-Studio/61586977724505/" target="_blank" rel="noopener" class="channel-card">
+        <span class="channel-icon" aria-hidden="true">📷</span>
+        <div>
+          <h4>Facebook Page</h4>
+          <p>See our latest work & message us</p>
+          <span class="channel-handle">Glamorphosis Studio</span>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/glamorphosis_makeupby_dabica?igsh=MWF1ZnExcGtiMDFteA%3D%3D" target="_blank" rel="noopener" class="channel-card">
+        <span class="channel-icon" aria-hidden="true">IG</span>
+        <div>
+          <h4>Instagram</h4>
+          <p>View our glam looks & updates</p>
+          <span class="channel-handle">@glamorphosis_makeupby_dabica</span>
+        </div>
+      </a>
+      <a href="mailto:dabsgonzales@yahoo.com" class="channel-card">
+        <span class="channel-icon" aria-hidden="true">✉️</span>
+        <div>
+          <h4>Email</h4>
+          <p>For inquiries, packages & quotations</p>
+          <span class="channel-handle">dabsgonzales@yahoo.com</span>
+        </div>
+      </a>
+    </div>
 
-  setTimeout(() => {
-    typing.remove();
-    const reply = getAIReply(val);
-    if (reply) {
-      addMessage(reply, 'bot');
-    } else {
-      addMessage(
-        'That\'s a great question! I\'m not sure about that one — let me connect you with the Glamorphosis team directly. 💬',
-        'bot'
-      );
-      setTimeout(() => {
-        const link = document.createElement('div');
-        link.className = 'msg bot';
-        link.innerHTML = '👉 <a href="https://m.me/61586977724505" target="_blank" rel="noopener" style="color:#c0748a; font-weight:500;">Chat with us on Messenger</a> — we\'ll reply ASAP!';
-        chatMessages.appendChild(link);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }, 700);
-    }
-  }, 700);
-}
+    <div class="contact-info-row">
+      <div class="hours-card">
+        <h4>Studio Hours</h4>
+        <div class="hours-list">
+          <div class="hours-row"><span>Monday – Friday</span><span>8:00 AM – 7:00 PM</span></div>
+          <div class="hours-row"><span>Saturday</span><span>7:00 AM – 8:00 PM</span></div>
+          <div class="hours-row"><span>Sunday</span><span>By appointment only</span></div>
+        </div>
+        <p class="hours-note">Holiday rates may apply. Home service available daily.</p>
+      </div>
+      <div class="location-card">
+        <h4>Location</h4>
+        <p>📍 Philippines<br>Home service available by appointment.</p>
+        <p style="margin-top:12px; font-size:13px; color:#7a5a68;">Home service available within<br>the surrounding area.</p>
+        <a href="#booking" onclick="showSection('booking')" class="btn-primary" style="margin-top:16px; display:inline-block;">Book an Appointment</a>
+      </div>
+    </div>
 
-function askQuick(question) {
-  if (quickSuggestions) quickSuggestions.style.display = 'none';
-  addMessage(question, 'user');
-  const typing = addMessage('typing...', 'bot typing');
-  setTimeout(() => {
-    typing.remove();
-    const reply = getAIReply(question);
-    addMessage(reply || 'Let me connect you with the studio!', 'bot');
-  }, 600);
-}
+  </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-mark">✦</span>
+        <span>Glamorphosis Studio</span>
+      </div>
+      <p class="footer-tagline">Hair &nbsp;·&nbsp; Makeup &nbsp;·&nbsp; Beauty</p>
+      <div class="footer-links">
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('services')">Services</a>
+        <a onclick="showSection('portfolio')">Portfolio</a>
+        <a onclick="showSection('booking')">Book Now</a>
+        <a onclick="showSection('contact')">Contact</a>
+      </div>
+      <p class="footer-copy">© 2025 Glamorphosis Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== AI CHAT WIDGET ===================== -->
+  <div id="chat-widget" class="chat-widget" role="complementary" aria-label="AI Beauty Assistant" aria-hidden="true">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <img class="chat-avatar" src="photos/glam-help.jpg" alt="" aria-hidden="true" />
+        <div>
+          <h4>Glam Assistant</h4>
+          <p>AI Beauty Help &nbsp;·&nbsp; Online now</p>
+        </div>
+      </div>
+      <button class="chat-close-btn" id="chat-close" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-messages" id="chat-messages" role="log" aria-live="polite">
+      <div class="msg bot">Hi there! ✦ I'm your Glam Assistant. Ask me about services, pricing, availability, or how to book!</div>
+    </div>
+    <div class="quick-suggestions" id="quick-suggestions">
+      <button class="quick-btn" onclick="askQuick('How much is bridal makeup?')">💍 Bridal makeup price?</button>
+      <button class="quick-btn" onclick="askQuick('Do you offer home service?')">🏠 Home service?</button>
+      <button class="quick-btn" onclick="askQuick('How do I book an appointment?')">📅 How to book?</button>
+      <button class="quick-btn" onclick="askQuick('What packages are available for weddings?')">👑 Wedding packages?</button>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="Ask anything..." aria-label="Ask the Glam Assistant" />
+      <button id="chat-send" aria-label="Send message">➤</button>
+    </div>
+  </div>
+
+  <button class="chat-toggle-btn" id="chat-toggle" aria-label="Open AI Beauty Assistant" aria-expanded="false">
+    <img class="chat-toggle-photo" src="photos/glam-help.jpg" alt="" aria-hidden="true" />
+    <span class="chat-toggle-label">Glam Help</span>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
