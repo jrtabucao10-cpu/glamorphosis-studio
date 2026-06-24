@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Glamorphosis Studio  Professional Hair, Makeup &amp; Beauty services. Bridal, events, photoshoots &amp; home service.">
   <title>Glamorphosis Studio</title>
-  <link rel="stylesheet" href="style.css?v=20260623-encodingfix">
+  <link rel="stylesheet" href="style.css?v=20260624-packages">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
     </button>
     <nav class="nav-links" id="nav-links" role="navigation" aria-label="Main navigation">
       <a href="#home" onclick="showSection('home')" class="nav-link active">Home</a>
-      <a href="#services" onclick="showSection('services')" class="nav-link">Services</a>
       <a href="#packages" onclick="showSection('packages')" class="nav-link">Packages</a>
       <a href="#portfolio" onclick="showSection('portfolio')" class="nav-link">Portfolio</a>
       <a href="#contact" onclick="showSection('contact')" class="nav-link">Contact</a>
@@ -54,40 +53,6 @@
       </div>
     </div>
 
-    <!-- Mini service teasers -->
-    <div class="home-services">
-      <p class="section-eyebrow">What We Offer</p>
-      <div class="teaser-grid">
-        <div class="teaser-card">
-          <div class="teaser-icon">&#128141;</div>
-          <h3>Bridal</h3>
-          <p>Full transformation for your most important day &mdash; from trial to touch-up.</p>
-          <span class="teaser-price">From &#8369;3,500</span>
-        </div>
-        <div class="teaser-card">
-          <div class="teaser-icon">&#10024;</div>
-          <h3>Event Makeup</h3>
-          <p>Debut, prom, gala &mdash; glam that photographs beautifully and lasts all night.</p>
-          <span class="teaser-price">From &#8369;1,500</span>
-        </div>
-        <div class="teaser-card">
-          <div class="teaser-icon">&#9986;</div>
-          <h3>Hair Styling</h3>
-          <p>Blowouts, updos, braids, and waves styled for every occasion.</p>
-          <span class="teaser-price">From &#8369;800</span>
-        </div>
-        <div class="teaser-card">
-          <div class="teaser-icon">&#127968;</div>
-          <h3>Home Service</h3>
-          <p>We travel to you  available for bridal, events, and photoshoots.</p>
-          <span class="teaser-price">+ Travel fee</span>
-        </div>
-      </div>
-      <div class="center-btn">
-        <a href="#services" onclick="showSection('services')" class="btn-outline">See All Services &rarr;</a>
-      </div>
-    </div>
-
     <!-- Social proof strip -->
     <div class="proof-strip">
       <div class="proof-item"><strong>500+</strong><span>Happy Clients</span></div>
@@ -101,364 +66,265 @@
 
   </section>
 
-  <!-- ===================== SERVICES ===================== -->
-  <section id="services" class="page">
-    <div class="page-hero">
-      <p class="section-eyebrow">What We Do</p>
-      <h2>Our Services</h2>
-      <p class="page-sub">Professional beauty services tailored for every occasion</p>
-    </div>
-
-    <div class="services-grid">
-
-      <div class="service-card">
-        <div class="service-icon-wrap" aria-hidden="true">&#10024;</div>
-        <div class="service-body">
-          <h3>Bridal Hair &amp; Makeup</h3>
-          <p>Complete bridal transformation. Includes trial session, airbrush foundation, full glam, lashes &amp; touch-up kit. Entourage packages available.</p>
-          <ul class="service-includes">
-            <li>Trial session included</li>
-            <li>Airbrush &amp; lashes</li>
-            <li>Touch-up kit</li>
-            <li>Entourage add-ons available</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-price">From &#8369;3,500</span>
-            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon-wrap" aria-hidden="true">&#10024;</div>
-        <div class="service-body">
-          <h3>Event Makeup</h3>
-          <p>Debut, prom, gala, pageant  full glam that lasts all night and photographs beautifully. Customized to your theme and style.</p>
-          <ul class="service-includes">
-            <li>Full face glam</li>
-            <li>HD-ready foundation</li>
-            <li>Lashes included</li>
-            <li>Setting spray finish</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-price">From &#8369;1,500</span>
-            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon-wrap" aria-hidden="true">&#9986;</div>
-        <div class="service-body">
-          <h3>Hair Styling</h3>
-          <p>Blowout, updo, braids, beach waves, or sleek straight  styled for your event or everyday glam. Every texture welcome.</p>
-          <ul class="service-includes">
-            <li>Blowout &amp; straightening</li>
-            <li>Updo &amp; braids</li>
-            <li>Curls &amp; waves</li>
-            <li>Hair accessories on request</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-price">From &#8369;800</span>
-            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon-wrap" aria-hidden="true">&#10024;</div>
-        <div class="service-body">
-          <h3>Photoshoot Makeup</h3>
-          <p>HD-ready, lens-proof makeup for editorial, commercial, and personal shoots. Designed to look flawless under studio lighting.</p>
-          <ul class="service-includes">
-            <li>HD &amp; airbrush finish</li>
-            <li>Studio lighting optimized</li>
-            <li>Multiple looks available</li>
-            <li>On-set touch-ups</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-price">From 2,000</span>
-            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon-wrap" aria-hidden="true">&#10024;</div>
-        <div class="service-body">
-          <h3>Home Service</h3>
-          <p>We come to you! Available for bridal, events, and photoshoots within the service area. Great for getting ready at your venue.</p>
-          <ul class="service-includes">
-            <li>Available for all services</li>
-            <li>Early morning slots available</li>
-            <li>Venue &amp; hotel ready</li>
-            <li>Travel fee based on location</li>
-          </ul>
-          <div class="service-footer">
-            <span class="service-price">+ Travel fee</span>
-            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Now</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- ===================== PACKAGES ===================== -->
   <section id="packages" class="page">
     <div class="page-hero">
       <p class="section-eyebrow">Packages &amp; Pricing</p>
       <h2>Packages</h2>
-      <p class="page-sub">Choose the perfect beauty package for your event, shoot, pageant, graduation, or wedding day.</p>
+      <p class="page-sub">Clean package cards with matching website fonts. Tap “View full price list” to see the original flyer.</p>
     </div>
 
-    <div class="typed-packages-grid">
-      <article class="typed-package-card featured">
-        <img src="photos/model-pearl-package.jpeg" alt="Pearl Package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Bridal Package</p>
-          <h3>Pearl Package</h3>
-          <p class="package-price">&#8369;8,000</p>
-          <p class="package-subtitle">Hair and HD traditional makeup for bride</p>
-          <ul>
-            <li>2 Hair and HD Traditional Makeup</li>
-            <li>Prep Look</li>
-            <li>Ceremony Look</li>
-            <li>Grooming for Groom</li>
-            <li>FREE human hair extension for Bride only</li>
-            <li>FREE reusable contact lenses (Brown/Gray)</li>
-            <li>Unlimited retouch for Bride and Groom</li>
-            <li>Whole day assistance</li>
-            <li>High-end makeup brands and sanitized brushes</li>
-            <li>FREE soft copies of photos and video transition via Google Drive (15 to 30 working days)</li>
-          </ul>
-          <div class="package-actions">
-            <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
-            <a href="photos/pearl-package.jpeg" class="package-flyer-link">View full price list</a>
+    <div class="pro-packages-grid">
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-pearl-package.jpeg" alt="Pearl Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Bridal Package</p>
+            <h3>Pearl Package</h3>
+            <p class="package-price">&#8369;8,000</p>
           </div>
         </div>
-      </article>
-
-      <article class="typed-package-card">
-        <img src="photos/model-diamond-package.jpeg" alt="Diamond Package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Bridal Package</p>
-          <h3>Diamond Package</h3>
-          <p class="package-price">&#8369;10,000</p>
-          <p class="package-subtitle">Hair and airbrush makeup for bride</p>
-          <ul>
-            <li>3 Hair and Airbrush Makeup</li>
-            <li>Prep Look, Ceremony Look, Reception Look</li>
-            <li>Grooming for Groom</li>
-            <li>FREE human hair extension for Bride only</li>
-            <li>FREE reusable contact lenses (Brown/Gray)</li>
-            <li>Unlimited retouch for Bride and Groom</li>
-            <li>Whole day assistance</li>
-            <li>High-end makeup brands and sanitized brushes</li>
-            <li>FREE soft copies of photos and video transition via Google Drive (15 to 30 working days)</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a><a href="photos/diamond-package.jpeg" class="package-flyer-link">View full price list</a></div>
+        <p class="package-subtitle">Hair and HD traditional makeup for bride</p>
+        <ul class="pro-package-highlights">
+              <li>2 Hair and HD Traditional Makeup</li>
+              <li>Prep + Ceremony Look</li>
+              <li>Grooming for Groom</li>
+              <li>FREE hair extension + contact lenses</li>
+              <li>Whole day assistance</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/pearl-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card">
-        <img src="photos/model-opal-package.jpeg" alt="Opal Package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Bridal Package</p>
-          <h3>Opal Package</h3>
-          <p class="package-price">&#8369;13,000</p>
-          <p class="package-subtitle">Hair and HD traditional makeup for bride</p>
-          <ul>
-            <li>3 Hair and HD Traditional Makeup</li>
-            <li>Prep Look, Ceremony Look, Reception Look</li>
-            <li>Grooming for Groom</li>
-            <li>Hair and makeup for Bride's Mother</li>
-            <li>Hair and makeup for Groom's Mother</li>
-            <li>FREE human hair extension for Bride only</li>
-            <li>FREE reusable contact lenses (Brown/Gray)</li>
-            <li>Unlimited retouch for Bride and Groom</li>
-            <li>Whole day assistance</li>
-            <li>High-end makeup brands and sanitized brushes</li>
-            <li>FREE soft copies of photos and video transition via Google Drive (15 to 30 working days)</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a><a href="photos/opal-package.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-diamond-package.jpeg" alt="Diamond Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Bridal Package</p>
+            <h3>Diamond Package</h3>
+            <p class="package-price">&#8369;10,000</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Hair and airbrush makeup for bride</p>
+        <ul class="pro-package-highlights">
+              <li>3 Hair and Airbrush Makeup</li>
+              <li>Prep + Ceremony + Reception Look</li>
+              <li>Grooming for Groom</li>
+              <li>FREE hair extension + contact lenses</li>
+              <li>Whole day assistance</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/diamond-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card">
-        <img src="photos/model-alexandrite-package.jpeg" alt="Alexandrite Package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Bridal Package</p>
-          <h3>Alexandrite Package</h3>
-          <p class="package-price">&#8369;15,000</p>
-          <p class="package-subtitle">Hair and airbrush makeup for bride</p>
-          <ul>
-            <li>3 Hair and Airbrush Makeup</li>
-            <li>Prep Look, Ceremony Look, Reception Look</li>
-            <li>Grooming for Groom</li>
-            <li>Hair and makeup for Bride's Mother</li>
-            <li>Hair and makeup for Groom's Mother</li>
-            <li>FREE human hair extension for Bride only</li>
-            <li>FREE reusable contact lenses (Brown/Gray)</li>
-            <li>Unlimited retouch for Bride and Groom</li>
-            <li>Whole day assistance</li>
-            <li>High-end makeup brands and sanitized brushes</li>
-            <li>FREE soft copies of photos and video transition via Google Drive (30 to 60 working days)</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a><a href="photos/alexandrite-package.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-opal-package.jpeg" alt="Opal Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Bridal Package</p>
+            <h3>Opal Package</h3>
+            <p class="package-price">&#8369;13,000</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Hair and HD traditional makeup for bride</p>
+        <ul class="pro-package-highlights">
+              <li>3 Hair and HD Traditional Makeup</li>
+              <li>Prep + Ceremony + Reception Look</li>
+              <li>Bride and Groom mother makeup included</li>
+              <li>FREE hair extension + contact lenses</li>
+              <li>Whole day assistance</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/opal-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card">
-        <img src="photos/model-aquamarine-package.jpeg" alt="Aquamarine Package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Pre-Debut Photoshoot Package</p>
-          <h3>Aquamarine Package</h3>
-          <p class="package-price">&#8369;5,000</p>
-          <p class="package-subtitle">Hair and HD traditional makeup for debutante</p>
-          <ul>
-            <li>2 different makeup looks</li>
-            <li>2 different hairstyles</li>
-            <li>2 outfits only</li>
-            <li>FREE use of human hair extension</li>
-            <li>FREE reusable contact lenses (Brown/Gray)</li>
-            <li>Unlimited retouch</li>
-            <li>Whole day assistance</li>
-            <li>Additional &#8369;1,000 for airbrush makeup</li>
-            <li>High-end makeup brands and sanitized brushes</li>
-            <li>FREE soft copies of photos and video transition via Google Drive (15 to 30 working days)</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a><a href="photos/aquamarine-package.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-alexandrite-package.jpeg" alt="Alexandrite Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Bridal Package</p>
+            <h3>Alexandrite Package</h3>
+            <p class="package-price">&#8369;15,000</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Hair and airbrush makeup for bride</p>
+        <ul class="pro-package-highlights">
+              <li>3 Hair and Airbrush Makeup</li>
+              <li>Prep + Ceremony + Reception Look</li>
+              <li>Bride and Groom mother makeup included</li>
+              <li>FREE hair extension + contact lenses</li>
+              <li>30 to 60 working days for soft copies</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/alexandrite-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card">
-        <img src="photos/model-emerald-package.jpeg" alt="Emerald Package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Debut / Birthday Package</p>
-          <h3>Emerald Package</h3>
-          <p class="package-price">&#8369;6,000</p>
-          <p class="package-subtitle">Hair and airbrush makeup for debutante</p>
-          <ul>
-            <li>2 to 3 different makeup looks</li>
-            <li>2 to 3 different hairstyles</li>
-            <li>2 to 3 outfits only</li>
-            <li>FREE use of human hair extension</li>
-            <li>FREE reusable contact lenses (Brown/Gray)</li>
-            <li>Unlimited retouch</li>
-            <li>Whole day assistance</li>
-            <li>High-end makeup brands and sanitized brushes</li>
-            <li>FREE soft copies of photos and video transition via Google Drive (15 to 30 working days)</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a><a href="photos/emerald-package.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-aquamarine-package.jpeg" alt="Aquamarine Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Pre-Debut Photoshoot</p>
+            <h3>Aquamarine Package</h3>
+            <p class="package-price">&#8369;5,000</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Hair and HD traditional makeup for debutante</p>
+        <ul class="pro-package-highlights">
+              <li>2 makeup looks</li>
+              <li>2 hairstyles</li>
+              <li>2 outfits only</li>
+              <li>FREE hair extension + contact lenses</li>
+              <li>Additional &#8369;1,000 for airbrush</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/aquamarine-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card">
-        <img src="photos/model-pageant-package.jpeg" alt="Pageant Package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Pageant Package</p>
-          <h3>Hair and Makeup for Pageant</h3>
-          <p class="package-price">&#8369;6,000</p>
-          <p class="package-subtitle">Hair and HD traditional makeup</p>
-          <ul>
-            <li>3 different makeup looks</li>
-            <li>3 different hairstyles</li>
-            <li>3 outfits</li>
-            <li>FREE use of human hair extension</li>
-            <li>FREE reusable contact lenses (Brown/Gray)</li>
-            <li>Unlimited retouch</li>
-            <li>Whole day assistance</li>
-            <li>Additional &#8369;1,000 for airbrush makeup</li>
-            <li>High-end makeup brands and sanitized brushes</li>
-            <li>FREE soft copies of photos and video transition via Google Drive (15 to 30 working days)</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a><a href="photos/pageant-package.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-emerald-package.jpeg" alt="Emerald Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Debut / Birthday Package</p>
+            <h3>Emerald Package</h3>
+            <p class="package-price">&#8369;6,000</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Hair and airbrush makeup for debutante</p>
+        <ul class="pro-package-highlights">
+              <li>2-3 makeup looks</li>
+              <li>2-3 hairstyles</li>
+              <li>2-3 outfits only</li>
+              <li>FREE hair extension + contact lenses</li>
+              <li>Whole day assistance</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/emerald-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card compact">
-        <img src="photos/model-graduation-package.jpeg" alt="Graduation package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Graduation Services</p>
-          <h3>Graduation Pictorial / Graduation Day</h3>
-          <p class="package-price">From &#8369;500</p>
-          <p class="package-subtitle">Hair and timeless makeup</p>
-          <ul>
-            <li>1 Head - &#8369;2,000 home service</li>
-            <li>2 Heads - &#8369;1,800 per head home service</li>
-            <li>3 Heads and above - &#8369;1,500 per head home service</li>
-            <li>1-3 Heads - &#8369;1,500 walk-in</li>
-            <li>4 Heads and above - &#8369;1,300 per head walk-in</li>
-            <li>Kids and male rates available</li>
-            <li>Reusable contact lenses (Brown/Gray) - &#8369;300</li>
-            <li>Additional &#8369;500 for airbrush makeup</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Service</a><a href="photos/graduation-package.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-pageant-package.jpeg" alt="Pageant Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Pageant Package</p>
+            <h3>Pageant Package</h3>
+            <p class="package-price">&#8369;6,000</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Hair and HD traditional makeup</p>
+        <ul class="pro-package-highlights">
+              <li>3 makeup looks</li>
+              <li>3 hairstyles</li>
+              <li>3 outfits</li>
+              <li>FREE hair extension + contact lenses</li>
+              <li>Additional &#8369;1,000 for airbrush</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/pageant-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card compact">
-        <img src="photos/model-entourage-package.jpeg" alt="Entourage package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Wedding Group Package</p>
-          <h3>Package for Entourage</h3>
-          <p class="package-price">From &#8369;500</p>
-          <p class="package-subtitle">Bridesmaids, groomsmen, principal sponsors, wedding guests</p>
-          <ul>
-            <li>1 Head - &#8369;2,000</li>
-            <li>2 Heads - &#8369;1,800 per head</li>
-            <li>3 Heads and above - &#8369;1,500 per head</li>
-            <li>Flower Girl / Kid (7 y/o below) - &#8369;500</li>
-            <li>Flower Girl / Kid (8 y/o above) - &#8369;1,000</li>
-            <li>Groomsmen - &#8369;500</li>
-            <li>Reusable contact lenses (Brown/Gray) - &#8369;300</li>
-            <li>Hair retouch - &#8369;100 / Makeup retouch - &#8369;100</li>
-            <li>Additional &#8369;500 for airbrush makeup</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Service</a><a href="photos/entourage-package.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-graduation-package.jpeg" alt="Graduation Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Graduation Rates</p>
+            <h3>Graduation Package</h3>
+            <p class="package-price">From &#8369;500</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Graduation pictorial / graduation day hair and makeup</p>
+        <ul class="pro-package-highlights">
+              <li>Home service and walk-in rates available</li>
+              <li>Group rates available</li>
+              <li>Kids and male rates available</li>
+              <li>Contact lenses available</li>
+              <li>Soft copies available</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/graduation-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card compact">
-        <img src="photos/model-hair-makeup-services.jpeg" alt="Hair and makeup services model collage" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">General Services</p>
-          <h3>Hair and Makeup Services</h3>
-          <p class="package-price">From &#8369;500</p>
-          <p class="package-subtitle">Hair and makeup for different occasions</p>
-          <ul>
-            <li>1 Head - &#8369;2,000 home service</li>
-            <li>1 Head - &#8369;1,500 walk-in</li>
-            <li>2 Heads - &#8369;1,800 per head home service</li>
-            <li>3 Heads and above - &#8369;1,500 per head home service</li>
-            <li>Kids and male rates available</li>
-            <li>Reusable contact lenses (Brown/Gray) - &#8369;300</li>
-            <li>Hair retouch - &#8369;100 / Makeup retouch - &#8369;100</li>
-            <li>Additional &#8369;500 for airbrush makeup</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Service</a><a href="photos/hair-makeup-services.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-entourage-package.jpeg" alt="Entourage Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Wedding Group Package</p>
+            <h3>Entourage Package</h3>
+            <p class="package-price">From &#8369;500</p>
+          </div>
+        </div>
+        <p class="package-subtitle">For bridesmaids, groomsmen, sponsors, and guests</p>
+        <ul class="pro-package-highlights">
+              <li>Per-head pricing available</li>
+              <li>Flower girl / kid rates</li>
+              <li>Groomsmen rates</li>
+              <li>Retouch services available</li>
+              <li>Transport fee depends on location</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/entourage-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
 
-      <article class="typed-package-card compact">
-        <img src="photos/model-photo-video-package.jpeg" alt="Photo and video package model photo" class="typed-package-photo">
-        <div class="typed-package-body">
-          <p class="package-category">Studio Add-on</p>
-          <h3>Photo/Video Package</h3>
-          <p class="package-price">&#8369;3,000</p>
-          <p class="package-subtitle">Photo and video package</p>
-          <ul>
-            <li>1 look hair and makeup</li>
-            <li>1 hour photoshoot session</li>
-            <li>1 hour videoshoot session</li>
-            <li>10 edited photos</li>
-            <li>All raw photos</li>
-            <li>1-2 minutes video transition</li>
-            <li>White, black, mocha, or plain background</li>
-            <li>Add &#8369;1,000 for another peg</li>
-          </ul>
-          <div class="package-actions"><a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a><a href="photos/photo-video-package.jpeg" class="package-flyer-link">View full price list</a></div>
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-hair-makeup-services.jpeg" alt="Hair & Makeup Rates model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">General Rates</p>
+            <h3>Hair &amp; Makeup Rates</h3>
+            <p class="package-price">From &#8369;500</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Hair and makeup for different occasions</p>
+        <ul class="pro-package-highlights">
+              <li>Home service and walk-in rates</li>
+              <li>Group rates available</li>
+              <li>Kids and male rates available</li>
+              <li>Retouch services available</li>
+              <li>Airbrush add-on available</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/hair-makeup-services.jpeg" class="package-flyer-link">View full price list</a>
+        </div>
+      </article>
+
+      <article class="pro-package-card">
+        <div class="pro-package-top">
+          <img src="photos/model-photo-video-package.jpeg" alt="Photo/Video Package model photo" class="pro-package-photo">
+          <div>
+            <p class="package-category">Studio Add-on</p>
+            <h3>Photo/Video Package</h3>
+            <p class="package-price">&#8369;3,000</p>
+          </div>
+        </div>
+        <p class="package-subtitle">Photo and video package</p>
+        <ul class="pro-package-highlights">
+              <li>1 look hair and makeup</li>
+              <li>1 hour photoshoot</li>
+              <li>1 hour videoshoot</li>
+              <li>10 edited photos</li>
+              <li>1-2 minute video transition</li>
+        </ul>
+        <div class="package-actions">
+          <a href="#booking" onclick="showSection('booking')" class="btn-sm">Book Package</a>
+          <a href="photos/photo-video-package.jpeg" class="package-flyer-link">View full price list</a>
         </div>
       </article>
     </div>
@@ -560,14 +426,9 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="b-service">Service</label>
+          <label for="b-service">Package</label>
           <select id="b-service" name="service" required="">
-            <option value="">Select a service...</option>
-            <option value="Bridal Hair &amp; Makeup">Bridal Hair &amp; Makeup - From &#8369;3,500</option>
-            <option value="Event Makeup">Event Makeup - From &#8369;1,500</option>
-            <option value="Hair Styling">Hair Styling - From &#8369;800</option>
-            <option value="Photoshoot Makeup">Photoshoot Makeup - From &#8369;2,000</option>
-            <option value="Home Service">Home Service - + Travel fee</option>
+            <option value="">Select a package...</option>
             <option value="Pearl Package">Pearl Package - &#8369;8,000</option>
             <option value="Diamond Package">Diamond Package - &#8369;10,000</option>
             <option value="Opal Package">Opal Package - &#8369;13,000</option>
@@ -577,7 +438,7 @@
             <option value="Pageant Package">Pageant Package - &#8369;6,000</option>
             <option value="Graduation Package">Graduation Package</option>
             <option value="Entourage Package">Entourage Package</option>
-            <option value="Hair &amp; Makeup Services">Hair &amp; Makeup Services</option>
+            <option value="Hair &amp; Makeup Rates">Hair &amp; Makeup Rates</option>
             <option value="Photo/Video Package">Photo/Video Package - &#8369;3,000</option>
           </select>
         </div>
@@ -706,7 +567,6 @@
       <p class="footer-tagline">Hair &nbsp;&middot;&nbsp; Makeup &nbsp;&middot;&nbsp; Beauty</p>
       <div class="footer-links">
         <a onclick="showSection('home')">Home</a>
-        <a onclick="showSection('services')">Services</a>
         <a onclick="showSection('packages')">Packages</a>
         <a onclick="showSection('portfolio')">Portfolio</a>
         <a onclick="showSection('booking')">Book Now</a>
@@ -771,11 +631,11 @@
       var priceModalImg = document.getElementById('price-modal-img');
       var priceModalCaption = document.getElementById('price-modal-caption');
       var priceModalClose = document.querySelector('.price-modal-close');
-      document.querySelectorAll('.price-card, .package-flyer-link').forEach(function (card) {
+      document.querySelectorAll('.price-card, .package-flyer-link, .pro-package-photo').forEach(function (card) {
         card.addEventListener('click', function (event) {
           event.preventDefault();
           var img = card.querySelector('img');
-          var packageCard = card.closest ? card.closest('.typed-package-card') : null;
+          var packageCard = card.closest ? card.closest('.pro-package-card, .typed-package-card') : null;
           var label = card.querySelector('span') || (packageCard ? packageCard.querySelector('h3') : null);
           if (!priceModal || !priceModalImg) return;
           priceModalImg.src = img ? img.src : card.href;
